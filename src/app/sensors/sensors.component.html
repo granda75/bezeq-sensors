@@ -1,0 +1,37 @@
+
+<div class="caption">
+  <span>{{sensors.length}}</span>
+  <span> התקנים רשומים </span>
+  <span> {{ "( " +workedSensors}} </span>
+  <span> תקינים </span>
+  <span> {{notWorkedSensors}}</span>
+  <span> בתקלה ) </span>
+</div>
+<div class="content">
+    <mat-grid-list cols="4" rowHeight="20rem" >
+      <mat-grid-tile *ngFor="let item of sensors">
+        <mat-card>
+          <img mat-card-sm-image *ngIf="item.Picture" src='{{ "assets/images/" + item.Picture + ".png" }}' alt="Avatar" class="matCardImage">
+          <img mat-card-sm-image *ngIf="!item.Picture" src='{{ "assets/images/" + "avatar.png" }}' alt="Avatar" class="matCardImage">
+          <mat-card-title>{{item.DeviceTypeHebrew}}</mat-card-title>
+          <mat-card-content>
+            {{item.WebSiteDeviceName}}
+         </mat-card-content>
+          <span class="material-icons green-color" *ngIf="item.ComponentOk == 1" (click)="changeComponentStatus(item)">circle</span>
+          <span class="material-icons red-color" *ngIf="item.ComponentOk == 0" (click)="changeComponentStatus(item)">circle</span>
+          <mat-card-footer>
+            <div class="rightDiv">
+                                     <div>צימוד</div>
+                                     <div>דיווח אחרון</div>
+            </div>
+            <div class="leftDiv">
+              <div>{{item.InstallDate | date: 'dd.MM.yyyy'}}</div>
+              <div>{{item.LastReportDate | date: 'dd.MM.yyyy'}}</div>
+            </div>
+
+          </mat-card-footer>
+        </mat-card>
+
+      </mat-grid-tile>
+    </mat-grid-list>
+</div>

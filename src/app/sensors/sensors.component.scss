@@ -1,0 +1,41 @@
+.caption {
+  margin-top: 4rem;
+  margin-right: 8rem;
+  font-weight: bold;
+}
+
+mat-grid-tile {
+background-color: white;
+}
+
+.green-color {
+  color:green;
+}
+
+.red-color {
+  color:red;
+}
+
+.leftDiv {
+  float: left;
+  margin-left: 4px;
+}
+
+.rightDiv {
+  float: right;
+  text-align: right;
+  margin-right: 4px;
+}
+
+mat-card {
+  height: 13rem;
+  width:  12rem;
+  border: 1px lightgrey groove;
+  text-align: center;
+  margin: 2px;
+  mat-card-title{
+    font-size: 12px;
+  }
+
+}
+
