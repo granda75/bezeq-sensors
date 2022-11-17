@@ -1,3 +1,9 @@
+@media (max-width:580px) {
+  .rightDiv, .leftDiv {
+    display:none;
+  }
+}
+
 .caption {
   margin-top: 4rem;
   margin-right: 8rem;
